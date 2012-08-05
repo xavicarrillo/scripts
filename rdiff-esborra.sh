@@ -3,10 +3,12 @@
 
 echo
  
-dir_backup="/var/backup/rdiff/remot/laseu/"
+dir_backup=$1
+older_than=$2
+
 for dir in `find $dir_backup -name rdiff-backup-data | sed s/rdiff-backup-data//g`
 do
-	echo $dir
-        rdiff-backup --force --remove-older-than 2W $dir
-	echo
+    echo Removing backups on $dir olther than $older_than
+    echo
+    rdiff-backup --force --remove-older-than $older_than $dir
 done

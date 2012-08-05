@@ -62,8 +62,7 @@ def change_password(user,password):
     sudo('usermod --password %s %s' % (crypted_password, user), pty=False)
 
 def update_history():
-	sudo("wget http://inventory-1.mit.esportz.com/downloads/history.sh -O /etc/profile.d/history.sh")
-	sudo("chmod +x /etc/profile.d/history.sh")
+	#whatever
 
 def deploy():
     if _is_host_up(env.host, int(env.port)) is True:
