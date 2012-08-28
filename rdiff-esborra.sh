@@ -1,5 +1,4 @@
 #!/bin/bash
-#esborra els backups mes antics de 2 setmanes
 
 echo
  
