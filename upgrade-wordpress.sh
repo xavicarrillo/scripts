@@ -7,8 +7,8 @@ DOMAIN="hastaelfindelmundo.net"
 
 # We download it first to have minimum downtime
 cd /var/www/vhosts/
-wget https://wordpress.org/latest.tar.gz
-tar xzvf latest.tar.gz
+wget https://wordpress.org/latest.zip
+unzip latest.zip
 
 read -p "Press [Enter] key to start the backup..."
 /usr/local/bin/backup_sql.sh /root/Dropbox/backups/sql
@@ -28,4 +28,6 @@ mv ~/.htaccess $DOMAIN
 chown apache:apache $DOMAIN -R
 mv ~/dokuwiki $DOMAIN
 rmdir wordpress
-rm -f latest.tar.gz
+rm -f latest.zip
+
+echo 'SUCCESS, WordPress has been updated'
